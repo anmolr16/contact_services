@@ -18,7 +18,7 @@ process.on('uncaughtException', function(err) {
     console.log("Node NOT Exiting...");
 });
 
-mongoose.connect('mongodb://localhost:27017/contact')
+mongoose.connect('mongodb://anmolr:qwerty123@52.163.240.192:27017/contacts')
     .then(() => { // if all is ok we will be here
         console.log('Connected to db');
 
