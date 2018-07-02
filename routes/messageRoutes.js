@@ -10,6 +10,7 @@ router.post('/createMessage', (request, response) => {
         var data = request.body;
         console.log(data);
         if (data) {
+            data.sentAt = new Date();
             var newmessage = new message(data);
             newmessage.save((error, result) => {
                 if (error) {

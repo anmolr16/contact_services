@@ -18,7 +18,7 @@ process.on('uncaughtException', function(err) {
     console.log("Node NOT Exiting...");
 });
 
-mongoose.connect('mongodb://anmolr:qwerty123@52.163.240.192:27017/contacts')
+mongoose.connect('mongodb://{{USERNAME}}:{{PASSWORD}}@{{SERVER_IP}}:{{PORT}}/{{DATABASE_NAME}}')
     .then(() => { // if all is ok we will be here
         console.log('Connected to db');
 
@@ -45,7 +45,7 @@ mongoose.connect('mongodb://anmolr:qwerty123@52.163.240.192:27017/contacts')
         app.use('/contact', require('./routes/contactRoutes'));
         app.use('/message', require('./routes/messageRoutes'));
 
-        var port = process.env.PORT || 9090;
+        var port = process.env.PORT || 9031;
         app.listen(port, function() {
             console.log("Server listening at " + port);
         });
